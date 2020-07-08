@@ -1,6 +1,11 @@
 class Api::V1::EventsController < ApplicationController
     def index
-        event = Event.all 
+        events = Event.all 
+        render json: events
+    end
+
+    def show
+        event = Event.find_by(params[:id])
         render json: event
     end
 
