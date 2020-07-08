@@ -13,4 +13,18 @@ class Api::V1::UsersController < ApplicationController
             render json: {message => "user with this id not found"}
         end
     end
+
+    def new
+        user = User.new
+    end
+
+    def create
+        user = User.create(user_params)
+        render json: user, include: [:events]
+    end
+
+    private
+    def user_params
+        params.require(:user).permit(:name, :username, :password_digest, :bio, :follower, :avatar)
+    end
 end
