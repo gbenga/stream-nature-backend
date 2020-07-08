@@ -1,8 +1,9 @@
 class User < ApplicationRecord
+    # Auth
+    has_secure_password
+
     has_many :events
     has_many :locations, through: :events
    
-    # Auth
-    has_secure_password
-    validates :username, uniqueness: { case_sensitive: false }
+    # validates :username, uniqueness: { case_sensitive: false }
 end
