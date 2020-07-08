@@ -4,9 +4,8 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.string :name
       t.integer :time
       t.integer :likes
-      t.references :user, null: false, foreign_key: true
-      t.references :location, null: false, foreign_key: true
-
+      t.integer :user_id
+      t.integer :location_id
       t.timestamps
     end
   end
