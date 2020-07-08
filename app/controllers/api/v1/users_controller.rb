@@ -10,7 +10,7 @@ class Api::V1::UsersController < ApplicationController
         if user
             render json: user, include: [:events]
         else
-            render json: {message => "user with this id not found"}
+            render json: "user with this id not found"
         end
     end
 
