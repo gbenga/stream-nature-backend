@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :events, only: [:index, :show]
       patch '/events/:id/like', to: 'events#like'
       post "/sign-in", to: "users#sign_in"
+      get "/validate", to: "users#validate"
     end
   end
 end
