@@ -23,6 +23,12 @@ class Api::V1::UsersController < ApplicationController
         render json: user, include: [:events]
     end
 
+    def follow
+        user = User.find(params[:id])
+        user.update(followers: user.followers + 1)
+        render json: { updatedFollowers: user.followers }
+    end
+
     private
     def user_params
         params.require(:user).permit(:name, :username, :password_digest, :bio, :follower, :avatar)
