@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :locations, only: [:index, :show]
       resources :events, only: [:index]
       post "/sign-in", to: "users#sign_in"
+      get "/validate", to: "users#validate"
     end
   end
 end
