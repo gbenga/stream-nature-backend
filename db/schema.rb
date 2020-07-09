@@ -16,12 +16,10 @@ ActiveRecord::Schema.define(version: 2020_07_07_214700) do
     t.string "name"
     t.integer "time"
     t.integer "likes"
-    t.integer "user_id", null: false
-    t.integer "location_id", null: false
+    t.integer "user_id"
+    t.integer "location_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["location_id"], name: "index_events_on_location_id"
-    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -46,6 +44,4 @@ ActiveRecord::Schema.define(version: 2020_07_07_214700) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "events", "locations"
-  add_foreign_key "events", "users"
 end
