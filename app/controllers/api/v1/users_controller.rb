@@ -23,6 +23,12 @@ class Api::V1::UsersController < ApplicationController
         render json: user, include: [:events]
     end
 
+    def follow
+        user = User.find(params[:id])
+        user.update(followers: user.followers + 1)
+        render json: { updatedFollowers: user.followers }
+    end
+
     def sign_in
         #Try an find a user with the username send in the params hash
         user = User.find_by(username: params[:username])

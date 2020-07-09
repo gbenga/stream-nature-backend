@@ -6,7 +6,13 @@ class Api::V1::EventsController < ApplicationController
 
     def show
         event = Event.find_by(params[:id])
-        render json: event
+        render json: event, include: [:user, :location]
+    end
+
+    def like
+        event = Event.find(params[:id])
+        event.update(likes: event.likes + 1)
+        render json: { updatedLikes: event.likes }
     end
 
 end
