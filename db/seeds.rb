@@ -14,10 +14,10 @@ l3 = Location.create(city: 'Exeter', country: 'United Kingdom', longitude: 11111
 l4 = Location.create(city: 'Birmingham', country: 'United Kingdom', longitude: 11111, latitude: 22222, avatar: "", bio: "Midlands" )
 l5 = Location.create(city: 'Manchester', country: 'United Kingdom', longitude: 11111, latitude: 22222, avatar: "", bio: "Bees bees bees" )
 
-u1 = User.create(name: "Gbenga", username: "gbengaaa", password: "pasword here", bio: "that guy", followers: 25, avatar: "https://www.out.com/sites/out.com/files/styles/vertical_gallery_desktop_1x/public/hbomax_020620_legend_zd_00383.jpg?itok=6kuTao9J&timestamp=1589587361")
-u2 = User.create(name: "Dorothy", username: "dorothy", password: "pasword here", bio: "that girl", followers: 30, avatar: "https://vignette.wikia.nocookie.net/p__/images/9/9f/Lana_kane.jpg/revision/latest/scale-to-width-down/340?cb=20130325021411&path-prefix=protagonist")
-u3 = User.create(name: "Dan", username: "dan", password: "pasword here", bio: "Check this out guys!", followers: 2, avatar: "")
-u4 = User.create(name: "Anderson", username: "andy", password: "pasword here", bio: "no longer that guy", followers: 2050, avatar: "")
+u1 = User.create(name: "Gbenga", username: "gbengaaa", password: "passGb", bio: "that guy", followers: 25, avatar: "https://www.out.com/sites/out.com/files/styles/vertical_gallery_desktop_1x/public/hbomax_020620_legend_zd_00383.jpg?itok=6kuTao9J&timestamp=1589587361")
+u2 = User.create(name: "Dorothy", username: "dorothy", password: "passDj", bio: "that girl", followers: 30, avatar: "https://vignette.wikia.nocookie.net/p__/images/9/9f/Lana_kane.jpg/revision/latest/scale-to-width-down/340?cb=20130325021411&path-prefix=protagonist")
+u3 = User.create(name: "Dan", username: "dan", password: "passDan", bio: "Check this out guys!", followers: 2, avatar: "")
+u4 = User.create(name: "Anderson", username: "andy", password: "passAnd", bio: "no longer that guy", followers: 2050, avatar: "")
 
 e1 = Event.create(name: "Northern Lights", time: 1010101, likes: 0, user_id: u1.id, location_id: l4.id)
 e2 = Event.create(name: " A nice sunset", time: 1010101, likes: 5, user_id: u2.id, location_id: l1.id)
