@@ -9,6 +9,11 @@ class ApplicationController < ActionController::API
     #Generate a JWT token using a secret generated on my machine
     def generate_token(data)
         # JWT.encode(data, secret)
-        JWT.encode(data, "thisWillChange")
+        JWT.encode(data, "thisSecretWillChange")
+    end
+
+    def decode_token
+        token = request.headers["Authorization"]
+        JWT.decode(token, "thisSecretWillChange").first["id"]
     end
 end
