@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index, :show, :new, :create]
       resources :locations, only: [:index, :show]
-      resources :events, only: [:index, :show]
+      resources :events, only: [:index]
+      post "/sign-in", to: "users#sign_in"
     end
   end
 end
