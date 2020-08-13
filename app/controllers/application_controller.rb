@@ -1,19 +1,26 @@
 class ApplicationController < ActionController::API
+    before_action :authorised?
 
-    #This method will retrieve my secret from my machine
-    #To use this code you must create your own secret on your own machine :)
-    # def secret
-    #     ENV["SECRET"]
-    # end 
+    def secret
+        ENV["MY_SECRET"]
+    end
 
-    #Generate a JWT token using a secret generated on my machine
     def generate_token(data)
-        # JWT.encode(data, secret)
-        JWT.encode(data, "thisSecretWillChange")
+        JWT.encode(data, secret)
     end
 
     def decode_token
         token = request.headers["Authorization"]
-        JWT.decode(token, "thisSecretWillChange").first["id"]
+        JWT.decode(token, secret).first["id"]
+    end
+
+    def logged_in_user
+        User.find(decode_token)
+    end
+
+    private
+
+    def authorised?
+        render json: { errors: ["You must be logged in to perform this action"] }, status: 406 unless logged_in_user
     end
 end
