@@ -5,9 +5,11 @@
 
 # Read more: https://github.com/cyu/rack-cors
 
+frontend_origin = ENV['RAILS_ENV'] === "production" ? 'https://stream-nature.netlify.app' : 'http://localhost:3001'
+
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins '*'
+    origins frontend_origin
 
     resource '*',
       headers: :any,
