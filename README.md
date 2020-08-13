@@ -37,7 +37,7 @@ Launch
 $ rails s
 ```
 
-After this, you should be able to view the backend at [localhost:3000](http//localhost:3000/api/v1), and then run the [frontend](https://github.com/gbenga/stream-nature-frontend)
+After this, you should be able to view the backend at [localhost:3000](http://localhost:3000/api/v1), and then run the [frontend](https://github.com/gbenga/stream-nature-frontend)
 
 ## **License**
 
