@@ -22,7 +22,7 @@ To use Stream Nature locally, you will need Git and Ruby installed. You will nee
 
 ```
 Clone this repository
-$ git clone https://github.com/gbenga/stream-nature-backtend
+$ git clone https://github.com/gbenga/stream-nature-backend
 
 Go into the repository
 $ cd stream-nature-backend
