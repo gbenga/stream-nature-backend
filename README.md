@@ -18,7 +18,7 @@ This project was created with:
 
 ## **Installation**
 
-To use Stream Nature locally, you will need Git and Ruby installed. You will need to clone this repo and launch the backend to start.
+To use Stream Nature locally, you will need Git and Ruby installed. You will need to clone this repo and launch the backend to start. Additionally, if you would like to view tables.drawio, you will need a drawio extension. These are easy to find by searching "drawio" in the VS Code Extensions Marketplace.
 
 ```
 Clone this repository
