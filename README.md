@@ -1,4 +1,4 @@
-NB: The React.js frontend for this project can be found [here](https://github.com/gbenga/stream-nature-frontend). It includes screenshots, links to the live site and instructions for local installation for the frontend.
+NB: The React.js frontend for this project can be found [here](https://github.com/gbenga/stream-nature-frontend). It includes screenshots, a link to the live site and instructions for local installation for the frontend.
 
 # Stream Nature
 
