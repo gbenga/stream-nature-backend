@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    skip_before_action :authorised?, only: [:create, :sign_in]
+    skip_before_action :authorised?, only: [:index, :show, :create, :sign_in]
 
     def index
         users = User.all 
@@ -7,11 +7,11 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def show
-        user = User.find(params[:id])
+        user = logged_in_user
         if user
             render json: user, include: [:events]
         else
-            render json: "user with this id not found"
+            render json: {message: "Could not find a user with this id"}
         end
     end
 
@@ -42,6 +42,7 @@ class Api::V1::UsersController < ApplicationController
 
     def validate
         user = logged_in_user
+
         if user 
             render json: {user: user, token: generate_token({id: user.id})}
         else 
