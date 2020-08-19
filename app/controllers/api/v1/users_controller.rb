@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    skip_before_action :authorised?, only: [:index, :show, :create, :sign_in]
+    skip_before_action :authorised?, only: [:index, :show, :create, :sign_in, :follow]
 
     def index
         users = User.all 

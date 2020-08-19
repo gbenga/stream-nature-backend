@@ -1,5 +1,5 @@
 class Api::V1::EventsController < ApplicationController
-    skip_before_action :authorised?, only: [:index, :show]
+    skip_before_action :authorised?, only: [:index, :show, :like]
 
     def index
         events = Event.all 
