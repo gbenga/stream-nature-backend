@@ -7,7 +7,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def show
-        user = logged_in_user
+        user = User.find_by(id: params[:id])
         if user
             render json: user, include: [:events]
         else

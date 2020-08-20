@@ -10,11 +10,8 @@ class ApplicationController < ActionController::API
     end
 
     def decode_token
-        # puts "helooooo"
-        # byebug
         token = request.headers["Authorization"]
         JWT.decode(token, secret).first["id"]
-        # puts h
     end
 
     def logged_in_user
